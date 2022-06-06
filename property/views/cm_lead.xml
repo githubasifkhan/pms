@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_crm_lead_form_inherited" model="ir.ui.view">
+        <field name="name">crm.lead.inherited</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="model">crm.lead</field>
+        <field name="priority">100</field>
+        <field type="xml" name="arch">
+            <xpath expr="//field[@name='function']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//group[@name='lead_partner']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='email_cc']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//group[@name='lead_info']" position="after">
+                <group>
+                    <field name="country_id"/>
+                    <field name="nationality_id"/>
+                </group>
+            </xpath>
+            <xpath expr="//group[@name='lead_priority']/field[@name='tag_ids']" position="replace">
+                <field name="area"/>
+            </xpath>
+            <xpath expr="//group[@name='lead_priority']" position="after">
+                <notebook>
+                    <page string="Basic Information">
+                        <group>
+                            <group>
+                                <field name="property_type_id"/>
+                                <field name="transaction_type"/>
+                                <field name="no_of_bedrooms" />
+                                <field name="no_of_bathrooms"/>
+                            </group>
+                            <group>
+                                <field name="size_in_sqft" force_save="1"/>
+                                <field name="size_in_sqm" force_save="1"/>
+                                <field name="no_of_parkings"/>
+                                <field name="budget_from"/>
+                                <field name="budget_to"/>
+                            </group>
+                        </group>
+                    </page>
+                    <page string="Media">
+                        <field name="crm_media_id" widget="many2many_binary"/>
+                    </page>
+                </notebook>
+            </xpath>
+        </field>
+    </record>
+</odoo>

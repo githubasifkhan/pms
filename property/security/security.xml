@@ -1,0 +1,8 @@
+<odoo>
+
+    <record id="group_tenancy_contract" model="res.groups">
+        <field name="name">Tenancy Contract</field>
+    </record>
+
+
+</odoo>
