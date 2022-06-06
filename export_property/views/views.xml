@@ -1,0 +1,31 @@
+<odoo>
+    <data>
+        <!--        Commercial Property-->
+
+        <record id="action_commercial_property_server" model="ir.actions.server">
+            <field name="name">Export Properties</field>
+            <field name="model_id" ref="export_property.model_commercial_property"/>
+            <field name="binding_model_id" ref="export_property.model_commercial_property"/>
+            <field name="state">code</field>
+            <field name="code">
+                if records:
+                action = records.action_commercial_wizard()
+            </field>
+        </record>
+
+
+
+        <!--        Residential Property-->
+        <record id="action_residential_property_server" model="ir.actions.server">
+            <field name="name">Export Properties</field>
+            <field name="model_id" ref="export_property.model_residential_property"/>
+            <field name="binding_model_id" ref="export_property.model_residential_property"/>
+            <field name="state">code</field>
+            <field name="code">
+                if records:
+                action = records.action_residential_wizard()
+            </field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_commercial_wizard,access.commercial.wizard,model_commercial_wizard,,1,1,1,1
+access_residential_wizard,access.residential.wizard,model_residential_wizard,,1,1,1,1
